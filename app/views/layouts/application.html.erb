@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <div class="top-header">
+      <div class="top-header__nav">
+       <ul class="top-header__menu">
+         <li class="top-header__menu-link">〇〇さん</li>
+         <li class="top-header__menu-title">
+           <%= link_to "mana_task", root_path, class: "nav-link" %></li>
+         <li>
+           <ul class="header__menu-inner">
+             <%# リストを作成するリンクは今後開発していくので、今は"#"にしておきます。 %>
+             <li><%= link_to "リストを作成", "#", class: "nav-link_NewList" %></li>
+             <li><%= link_to "サインアウト", "#", class: "nav-link" %></li>
+           </ul>
+         </li>
+       </ul>
+     </div>
+   </div>
     <%= yield %>
   </body>
 </html>
