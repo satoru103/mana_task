@@ -1,0 +1,12 @@
+<div class="tasklist__edit">
+  <div class="tasklist-container">
+    <%= form_with model: @tasklist, url: { action: :update }, html: { class: 'edit_tasklist' }, local: true do |t| %>
+      <% if @tasklist.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+      <%= t.label :title %>
+      <%= t.text_field :title, class: "tasklist-form", placeholder: "リスト名" %>
+      <div class="tasklist-Editbtn"><%= t.submit "編集する", class: "submitBtn" %></div>
+    <% end %>
+  </div>
+</div>

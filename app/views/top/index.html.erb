@@ -1,4 +1,19 @@
-<p>このページは仮のトップページです。</p>
-
-<%# ここに追加する %>
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
+<div class="TopPage">
+  <div class="TaskListWrapper">
+    <% @tasklists.each do |tasklist| %>
+      <div class="Tasklist">
+        <div class="Tasklist_header">
+          <h2 class="Tasklist_header-title"><%=tasklist.title %></h2>
+          <div class="Tasklist_header-action">
+            <%= link_to tasklist_path(tasklist), method: :delete, data:{confirm: "#{tasklist.title}を削除してもよろしいですか"} do%>
+              <i class="fas fa-trash"></i>
+            <% end %>
+            <%= link_to edit_tasklist_path(tasklist) do%>
+              <i class="fas fa-pen"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
