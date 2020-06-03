@@ -48,6 +48,34 @@ body {
   }
 }
 
+.cardWrapper {
+        overflow-y: scroll;
+        max-height: 76vh;
+        .card {
+          margin-bottom: 10px;
+          padding: 10px;
+          &_title {
+            font-size: 17px;
+          }
+          &_detail {
+            display: none;
+            &.is-exist {
+              display: block;
+              color: #999;
+              & > i {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      .card-add{
+        color: #8c8c8c;
+        &__btn {
+          color: #8c8c8c;
+          }
+        }
+
 // header
 .top-header {
   background: #66CCCC;

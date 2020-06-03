@@ -13,6 +13,21 @@
             <% end %>
           </div>
         </div>
+        <div class="cardWrapper">
+          <% tasklist.cards.each do |card|%>
+            <div class="card">
+              <h3 class="card-title"><%= card.content %></h3>
+              <% if card.card_name.size > 0 %>
+                <div class="card-detail"><i class="fas fa-bars"></i></div>
+              <% end %>
+            </div>
+          <% end %>
+
+           <div class="card-add">
+             <i class="far fa-plus-square"></i>
+             <%= link_to "タスクを追加",new_tasklist_card_path(tasklist),class:"card-add_btn"%>
+           </div>
+        </div>
       </div>
     <% end %>
   </div>

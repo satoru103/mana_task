@@ -1,4 +1,4 @@
-<if current_user>
+<% if user_signed_in? && current_user %>
   <div class="top-header">
     <div class="top-header__nav">
      <ul class="top-header__menu">
@@ -15,3 +15,4 @@
      </ul>
    </div>
  </div>
+<% end %>
