@@ -1,0 +1,19 @@
+<div class="card__edit">
+  <div class="card-container">
+    <%=form_with model:@card, url:{action: :update},class: "edit_card",local: true do |c| %>
+      <% if @card.errors.any? %>
+        <p class="card-name">カード名は1～255文字以内で入力してください</p>
+      <% end %>
+
+      <%= c.label :card_name %>
+      <%= c.text_field :card_name, autofocus: "off", class: "cardName-form", placeholder: "タスク名" %>
+
+      <%= c.label :content %>
+      <%= c.text_area :content, autofocus: "off", class: "cardContent-form", placeholder: "タスク詳細" %>
+
+      <label>リスト名</label>
+      <%=select :card, :tasklist_id, @tasklists.map{ |t| [t.title, t.id] },{}, { class: "cardTask-form" } %>
+      <div class="card-btn"><%= c.submit "編集", class: "cardSubmitBtn" %></div>
+    <% end %>
+  </div>
+</div>

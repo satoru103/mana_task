@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to:"top#index"
 
   resources :tasklists, only: [:new,:create,:edit,:update,:destroy] do
-    resources :cards, only:[:new,:create]
+    resources :cards, except:[:index]
   end
 end

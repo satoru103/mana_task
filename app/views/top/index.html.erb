@@ -18,7 +18,11 @@
             <div class="card">
               <h3 class="card-title"><%= card.content %></h3>
               <% if card.card_name.size > 0 %>
-                <div class="card-detail"><i class="fas fa-bars"></i></div>
+                <div class="card-detail">
+                  <%=link_to tasklist_card_path(tasklist,card) do%>
+                    <i class="fas fa-bars"></i>
+                  <% end %>
+               </div>
               <% end %>
             </div>
           <% end %>

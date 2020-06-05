@@ -1,0 +1,15 @@
+<div class="card__show">
+  <div class="card-container">
+    <h2><% %></h2>
+    <div class="card__show-name">
+      <h2><%= @card.card_name%></h2>
+    </div>
+    <div class="card__show-content">
+      <h2><%= @card.content%></h2>
+    </div>
+    <div class="card__show-link">
+      <%=link_to "編集" ,edit_tasklist_card_path(@card.tasklist,@card) %>
+      <%=link_to "削除" ,tasklist_card_path(@card.tasklist,@card), method: :delete %>
+    </div>
+  </div>
+</div>
