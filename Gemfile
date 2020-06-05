@@ -65,3 +65,6 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
+
+gem 'pg', group: :production
+gem 'sqlite3', group: :development 
