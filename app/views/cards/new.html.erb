@@ -5,13 +5,16 @@
       <% if @card.errors.any? %>
         <p class="card-name">カード名は1～255文字以内で入力してください</p>
       <% end %>
+      <div class="cardName">
+        <%= c.label :"タスクカード名" %>
+        <%= c.text_field :card_name, autofocus: "off", class: "cardName-form", placeholder: "タスク名" %>
+      </div>
 
-      <%= c.label :card_name %>
-      <%= c.text_field :card_name, autofocus: "off", class: "cardName-form", placeholder: "タスク名" %>
-
-      <%= c.label :content %>
-      <%= c.text_area :content, autofocus: "off", class: "cardContent-form", placeholder: "タスク詳細" %>
-      <div class="card-btn"><%= c.submit "作成", class: "cardSubmitBtn" %></div>
+      <div class="cardContent">
+        <%= c.label :タスクカード詳細 %>
+        <%= c.text_area :content, autofocus: "off", class: "cardContent-form", placeholder: "タスク詳細" %>
+      </div>
+      <div class="cardBtn"><%= c.submit "作成", class: "cardBtn_submit" %></div>
     <% end %>
   </div>
 </div>

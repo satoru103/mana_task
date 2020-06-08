@@ -3,6 +3,23 @@
     max-width: 500px;
     margin: 70px auto 0;
   }
+  .cardName{
+    &-form{
+      display: block;
+    }
+  }
+  .cardContent{
+    margin-top: 20px;
+    &-form{
+      display: block;
+    }
+  }
+  .cardBtn{
+    margin-top: 20px
+  }
+  .cardBtn_submit{
+    width: 200px;
+  }
 }
 
 .card__show{
