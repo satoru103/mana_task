@@ -9,6 +9,7 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to root_path
     else
+      flash[:notice]="新しいタスクリストを作成しました"
       render "new"
     end
   end
@@ -34,6 +35,7 @@ class CardsController < ApplicationController
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
+    flash.now[:notice]="削除に成功しました"
     redirect_to root_path
   end
 

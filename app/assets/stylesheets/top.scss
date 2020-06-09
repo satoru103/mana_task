@@ -2,9 +2,15 @@ body {
   overflow: visible;
 }
 
-.notice,
+.notification{
+  text-align: center;
+}
+
+.notice{
+  background-color:#38AEF0;
+}
 .alert {
-  display: none;
+  background-color:#F35500;
 }
 
 

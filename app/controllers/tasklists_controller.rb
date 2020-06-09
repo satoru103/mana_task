@@ -7,6 +7,7 @@ class TasklistsController < ApplicationController
   def create
     @tasklist = Tasklist.new(tasklist_params)
     if @tasklist.save
+      flash[:notice]="新しいタスクリストを作成しました"
       redirect_to root_path
     else
       render "new"
