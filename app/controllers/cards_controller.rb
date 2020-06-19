@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  before_action :set_card,only:[:show,:edit,:update,:destroy]
+
   def new
     @card = Card.new
     @tasklist = Tasklist.find(params[:tasklist_id])
@@ -15,16 +17,13 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find(params[:id])
   end
 
   def edit
-    @card =Card.find(params[:id])
     @tasklists = Tasklist.where(user: current_user)
   end
 
   def update
-    @card = Card.find(params[:id])
     if @card.update_attributes(card_params)
       redirect_to root_path
     else
@@ -33,11 +32,14 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @card = Card.find(params[:id])
     @card.destroy
     flash.now[:notice]="削除に成功しました"
     redirect_to root_path
   end
+
+  def set_card 
+    @card = Card.find(params[:id])
+  end 
 
   private
   def card_params
