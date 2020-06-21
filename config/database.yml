@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: mana_task_production
-  username: mana_task
-  password: <%= ENV['MANA_TASK_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
